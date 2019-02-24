@@ -18,7 +18,7 @@ I will refer to the static IP VPS as "frontend" and the dynamic IP server as "ba
 update_my_ip.sh - should be run on the "backend" server(the one with dynanmic IP).
 Gets the external IP of the current host by polling ifconfig.co with curl.
 If the IP has changed copies the IP to the "frontend" server (the one with static IP).
-The IP is written to ~/current_ip on the "backend" host and to /root/current_ip on "frontend" host.
+The IP is written to ~/current_ip on the "backend" host and to /home/centos/current_ip on "frontend" host.
 
 
 iptables_forward.sh - should be run on the "frontend" server(the one with static IP).
