@@ -40,10 +40,10 @@ First test the script out manually.
 
 If you verify everything is working then add them to crons. I have used the following:
 
-1) Backend
-*/15 * * * * /root/update_my_ip
+1) Backend (using crontab -e command)
+*/15 * * * * /root/update_my_ip.sh
 
-2) Frontend
+2) Frontend (using /etc/crontab)
 * * * * * root /home/centos/iptables_forward.sh
 
 
