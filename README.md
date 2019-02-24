@@ -5,7 +5,7 @@ I use this setup to rent a cheap VPS with a static IP to always redirect the tra
 So I have two servers, one at home that has dynamic IP and a very cheap VPS that has a static IP.
 I will refer to the static IP VPS as "frontend" and the dynamic IP server as "backend".
 
-##Why 
+## Why 
 1) A tiny VPS is cheaper than static IP at home in my case.
 2) My home connections will still have a changing IP - harder to block or track you.
 4) Changing of ISP or moving your server location is easier - you will always have the same static IP - no need to change DNS.
@@ -14,7 +14,7 @@ I will refer to the static IP VPS as "frontend" and the dynamic IP server as "ba
 7) It can have a security effect against DDOS - they would first kill the tiny VPS server and not your home connection - your home IP is not advertised.
 8) Dyndns and no-ip services do not allow for A level domains and updates are a lot slower.
 
-##How it works
+## How it works
 update_my_ip.sh - should be run on the "backend" server(the one with dynanmic IP).
 Gets the external IP of the current host by polling ifconfig.co with curl.
 If the IP has changed copies the IP to the "frontend" server (the one with static IP).
@@ -29,15 +29,15 @@ On the "frontend" server the port 2222 is not redirected to backend, but to loca
 
 
 
-##Setup
+## Setup
 
-###Backend
+### Backend
 First setup the backend server to detect your IP.
 Place the update_my_ip.sh file where you can execute it. Not needed to run as root.
 Make sure you can do a ssh connection to the "frontend" server from the "backend" user that runs the update_my_ip.sh script.
 Change the value of REMOTEHOST in the update_my_ip.sh script to suit your server 
 
-###Frontend
+### Frontend
 On the "frontend" machine you need to add line "net.ipv4.ip_forward = 1" to /etc/sysctl.conf or /etc/sysctl.d/99-custom.conf - depending on your distro. Then run sysctl -p.
 You need to run the script as root or a user that has the privilege to make iptables rules.
 
