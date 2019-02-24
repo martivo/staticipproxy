@@ -15,7 +15,7 @@ curip=`cat ~/current_ip`
 if [ "$myip" != "$curip" ]
 then
   echo "Ip changed to $myip"
-  ssh -p 2222 $REMOTEHOST "echo $myip > /root/current_ip"
+  ssh -p 2222 $REMOTEHOST "echo $myip > /home/centos/current_ip"
   if [ $? -eq 0 ]
   then
     echo $myip > /root/current_ip

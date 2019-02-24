@@ -1,5 +1,5 @@
 #!/bin/bash
-curip=`cat /root/current_ip`
+curip=`cat /home/centos/current_ip`
 
 chainrule=`iptables -L PREROUTING -t nat | grep "to:" | tail -1 | cut -d":" -f2`
 
