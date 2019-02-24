@@ -53,12 +53,14 @@ If you verify everything is working then add them to crons. I have used the foll
 ### Cron
 1) Backend (using crontab -e command) every 15 minutes.
 
-```*/15 * * * * /root/update_my_ip.sh
+```
+*/15 * * * * /root/update_my_ip.sh
 ```
 
 2) Frontend (using /etc/crontab) every minute.
 
-```* * * * * root /home/centos/iptables_forward.sh
+```
+* * * * * root /home/centos/iptables_forward.sh
 ```
 
 
