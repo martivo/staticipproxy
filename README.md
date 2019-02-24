@@ -7,7 +7,7 @@ I will refer to the static IP VPS as "frontend" and the dynamic IP server as "ba
 
 ## Why 
 1) A tiny VPS is cheaper than static IP at home in my case.
-2) My home connections will still have a changing IP - harder to block or track you.
+2) My home connections to the world will still have a changing IP - harder to block or track you.
 4) Changing of ISP or moving your server location is easier - you will always have the same static IP - no need to change DNS.
 5) This is not a VPN - outgoing connections from the "backend"  show your current real IP and you get the maximum of your ISP speed. VPN tends to be slower - latency wise for sure.
 6) Having powerful VPS might be very expensive - so you can offload the work to your own hardware without huge cost.
